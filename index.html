@@ -33,10 +33,9 @@
 
         /* استایل عکس */
         img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
+            width: 100%; /* عکس تمام عرض جعبه را پر کند */
+            max-width: 300px; /* حداکثر عرض عکس */
+            height: auto; /* تناسب ابعاد حفظ شود */
             margin-bottom: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
@@ -90,8 +89,8 @@
 
     <div class="container">
         <img src="https://raw.githubusercontent.com/Serverqp/test_use/main/photo14268799113.jpg" alt="عکس بابا">
-        <h1>تولدت مبارک بابا!</h1>
-        <p>امیدوارم امسال پر از شادی و موفقیت باشه ❤️</p>
+        <h1>تولدتون مبارک!</h1>
+        <p>امیدوارم امسال براتون پر از شادی و موفقیت باشه ❤️</p>
     </div>
 
     <script>
