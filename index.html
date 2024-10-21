@@ -3,142 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎉تولدتون مبارک🎉</title>
+    <title>زندگی نامه</title>
     <style>
-        /* استایل کلی بدنه */
         body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(45deg, #ff6b6b, #f6d365);
-            min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
+            justify-content: center; /* وسط‌چین افقی */
+            align-items: center; /* وسط‌چین عمودی */
+            height: 100vh; /* ارتفاع کل صفحه */
+            color: #333; /* رنگ متن */
+            text-align: center; /* تراز متن به وسط */
+            background: linear-gradient(270deg, #ffeb3b, #4caf50, #f44336); /* رنگ‌های پس‌زمینه */
+            background-size: 600% 600%; /* سایز پس‌زمینه */
+            animation: gradient 15s ease infinite; /* انیمیشن پس‌زمینه */
         }
 
-        /* جعبه محتوا */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
         .container {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 90%; /* برای نمایش بهتر در موبایل */
-            width: 350px;
-            animation: fadeIn 2s;
+            max-width: 800px; /* حداکثر عرض برای محتوای متن */
+            padding: 20px; /* فاصله داخلی */
+            background-color: rgba(255, 255, 255, 0.8); /* پس‌زمینه سفید با شفافیت */
+            border-radius: 10px; /* گرد کردن گوشه‌ها */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* سایه */
         }
 
-        /* استایل عکس */
-        img {
-            width: 150px; /* عرض عکس */
-            height: auto; /* حفظ تناسب ابعاد */
-            margin-bottom: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* استایل عنوان */
         h1 {
-            font-size: 2rem;
-            margin: 10px 0;
-            color: #333;
-            animation: bounce 1.5s infinite alternate;
+            margin-bottom: 20px; /* فاصله پایین عنوان */
         }
 
-        /* استایل متن */
         p {
-            font-size: 1.2rem;
-            margin: 10px 0;
-            color: #555;
+            line-height: 1.6; /* فاصله خطوط برای متن */
         }
-
-        /* دکمه پخش آهنگ */
-        .audio-control {
-            margin-top: 15px;
-            background-color: #ff6b6b;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-
-        .audio-control:hover {
-            background-color: #f04e4e;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-10px); }
-        }
-
-        /* کاغذپاشی */
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background-color: #fff;
-            opacity: 0.7;
-            animation: fall 5s linear infinite;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(-100px); }
-            100% { transform: translateY(110vh); }
-        }
-
-        .confetti:nth-child(odd) {
-            background-color: #ff6b6b;
+        
+        img {
+            max-width: 20%; /* تنظیم عرض تصویر به حداکثر 50% */
+            height: auto; /* حفظ نسبت ابعاد */
+            border-radius: 10px; /* گرد کردن گوشه‌های تصویر */
+            margin-bottom: 20px; /* فاصله پایین تصویر */
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <img src="https://raw.githubusercontent.com/Serverqp/test_use/main/photo14268799113.jpg" alt="عکس بابا">
-        <h1>✨تولدتون مبارک✨</h1>
-        <p>     امیدوارم امسال براتون سرشار از شادی و موفقیت باشه و سایتون همیشه بالای سرمون باشه💚
-            😊(:از طرف محمدجواد:)  </p>
+        <img src="https://raw.githubusercontent.com/JavadCamback/EnterAi/main/photo14151978297.jpg" alt="توضیح تصویر">
+        <h1>زندگی نامه</h1>
+        <p>
+            محمدجواد جاودانفرد زاده 5 آذر 1388 در شهر مشهد متولد شد.
+او در همان زمان نوزادی و کودکی بسیار سخت کوش بود و به فکر آینده خود بود که چگونه پول در بیاورد!
+از همان کودکی یعنی حدود 6-7 سالگی کار خود را در صنعت گیمری آغاز کرد و با اشتیاق به کار خود ادامه داد.
+او پس از فارغ التحصیل شدن در کلاس ششم در مدرسه نوین به کار خود در مدرسه ادامه داد و از کلاس هفتم به شغل غیر شریف استریمری روی آورد ولی چون در آن کار موفقیت آنچنانی کسب نکرد و فقط حدود 1000 دنبال کننده در کانال آپارات خود کسب کرد.
+پس از اتمام کلاس هشتم او تصمیم گرفت از حرفه استریمری خداحافظی کند و به شغل شریف برنامه نویسی روی آورد.
+پس از تلاش های مکرر بلاخره موفق شد اولین سایت خود را 
+بسازد و بلاخره در این کار موفق شد. 
+در حال حاضر او در مدرسه معارف سجادیه تحصیل میکند و با بی امیدی به زندگی خود ادامه میدهد.
 
-        <!-- دکمه کنترل پخش آهنگ -->
-        <button class="audio-control" onclick="toggleAudio()">پخش/توقف آهنگ 🎵</button>
-
-        <!-- فایل صوتی -->
-        <audio id="birthdaySong" src="https://raw.githubusercontent.com/Serverqp/test_use/main/Ragheb%20-%20Pedar%20(128)(1).mp3" preload="auto"></audio>
+        </p>
     </div>
-
-    <script>
-        // ایجاد انیمیشن کاغذپاشی
-        for (let i = 0; i < 100; i++) {
-            const confetti = document.createElement("div");
-            confetti.classList.add("confetti");
-            confetti.style.left = Math.random() * 100 + "vw";
-            confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
-            document.body.appendChild(confetti);
-        }
-
-        // کنترل پخش و توقف آهنگ
-        const audio = document.getElementById("birthdaySong");
-        let isPlaying = false;
-
-        function toggleAudio() {
-            if (isPlaying) {
-                audio.pause();
-            } else {
-                audio.play();
-            }
-            isPlaying = !isPlaying;
-        }
-    </script>
-
 </body>
 </html>
