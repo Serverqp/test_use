@@ -1,79 +1,174 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta name="google-site-verification" content="gJ5r_sUtg0DhJu6HpNq9NWGY2_fApFyPMeoqEAGsfgE" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>زندگی نامه محمدجواد جاودانفرد</title>
-    
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="gJ5r_sUtg0DhJu6HpNq9NWGY2_fApFyPMeoqEAGsfgE" />
-    
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center; /* وسط‌چین افقی */
-            align-items: center; /* وسط‌چین عمودی */
-            height: 100vh; /* ارتفاع کل صفحه */
-            color: #333; /* رنگ متن */
-            text-align: center; /* تراز متن به وسط */
-            background: linear-gradient(270deg, #ffeb3b, #4caf50, #f44336); /* رنگ‌های پس‌زمینه */
-            background-size: 600% 600%; /* سایز پس‌زمینه */
-            animation: gradient 15s ease infinite; /* انیمیشن پس‌زمینه */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فروشگاه آنلاین</title>
+  <style>
+    /* استایل عمومی */
+    body {
+      font-family: Arial, sans-serif;
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
 
-        @keyframes gradient {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+    /* پس‌زمینه متحرک رنگی */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+      background-size: 400% 400%;
+      animation: gradientAnimation 15s ease infinite;
+      z-index: -1;
+    }
 
-        .container {
-            max-width: 800px; /* حداکثر عرض برای محتوای متن */
-            padding: 20px; /* فاصله داخلی */
-            background-color: rgba(255, 255, 255, 0.8); /* پس‌زمینه سفید با شفافیت */
-            border-radius: 10px; /* گرد کردن گوشه‌ها */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* سایه */
-        }
+    /* انیمیشن تغییر گرادیان رنگی */
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        h1 {
-            margin-bottom: 20px; /* فاصله پایین عنوان */
-        }
-
-        p {
-            line-height: 1.6; /* فاصله خطوط برای متن */
-        }
-        
-        img {
-            max-width: 20%; /* تنظیم عرض تصویر به حداکثر 50% */
-            height: auto; /* حفظ نسبت ابعاد */
-            border-radius: 10px; /* گرد کردن گوشه‌های تصویر */
-            margin-bottom: 20px; /* فاصله پایین تصویر */
-        }
-    </style>
+    .header {
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px;
+      background-color: rgba(248, 249, 250, 0.8);
+    }
+    .cart-button {
+      cursor: pointer;
+      padding: 15px 25px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .products {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .product {
+      text-align: center;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      width: 220px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .add-to-cart {
+      cursor: pointer;
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 1em;
+    }
+    #cartModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border: 1px solid #ccc;
+      padding: 20px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      width: 300px;
+      z-index: 1000;
+    }
+    #cartModal h2 {
+      margin-top: 0;
+    }
+    .cart-item {
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <img src="https://raw.githubusercontent.com/JavadCamback/EnterAi/main/photo14151978297.jpg" alt="توضیح تصویر">
-        <h1>زندگی نامه</h1>
-        <p>
-            محمدجواد جاودانفرد زاده 5 آذر 1388 در شهر مشهد متولد شد.
-او در همان زمان نوزادی و کودکی بسیار سخت کوش بود و به فکر آینده خود بود که چگونه پول در بیاورد!
-از همان کودکی یعنی حدود 6-7 سالگی کار خود را در صنعت گیمری آغاز کرد و با اشتیاق به کار خود ادامه داد.
-او پس از فارغ التحصیل شدن در کلاس ششم در مدرسه نوین به کار خود در مدرسه ادامه داد و از کلاس هفتم به شغل غیر شریف استریمری روی آورد ولی چون در آن کار موفقیت آنچنانی کسب نکرد و فقط حدود 1000 دنبال کننده در کانال آپارات خود کسب کرد.
-پس از اتمام کلاس هشتم او تصمیم گرفت از حرفه استریمری خداحافظی کند و به شغل شریف برنامه نویسی روی آورد.
-پس از تلاش های مکرر بلاخره موفق شد اولین سایت خود را 
-بسازد و بلاخره در این کار موفق شد. 
-در حال حاضر او در مدرسه معارف سجادیه تحصیل میکند و به زندگی خود ادامه میدهد.
-        </p>
-    </div>
+
+<div class="header">
+  <button class="cart-button" onclick="toggleCart()">سبد خرید من</button>
+</div>
+
+<div class="products">
+  <!-- محصول 1 -->
+  <div class="product">
+    <img src="https://raw.githubusercontent.com/Serverqp/EitaaAd/main/df.jpg" alt="کالا 1">
+    <h3>ماشین لباسشویی</h3>
+    <p>100,000 تومان</p>
+    <button class="add-to-cart" onclick="addToCart('کالا 1', '100,000 تومان')">افزودن به سبد خرید</button>
+  </div>
+  <!-- محصول 2 -->
+  <div class="product">
+    <img src="https://raw.githubusercontent.com/Serverqp/EitaaAd/main/N60201-2.jpg" alt="کالا 2">
+    <h3>یخچال کلور استیل</h3>
+    <p>200,000 تومان</p>
+    <button class="add-to-cart" onclick="addToCart('کالا 2', '200,000 تومان')">افزودن به سبد خرید</button>
+  </div>
+  <!-- محصول 3 -->
+  <div class="product">
+    <img src="https://raw.githubusercontent.com/Serverqp/EitaaAd/main/refrigerator-freezer-lg-gr-x33ffqrl-essence-white.jpg" alt="کالا 3">
+    <h3>یخچال دوقلو</h3>
+    <p>150,000 تومان</p>
+    <button class="add-to-cart" onclick="addToCart('یخچال دوقلو', '150,000 تومان')">افزودن به سبد خرید</button>
+  </div>
+  <!-- محصول 4 -->
+  <div class="product">
+    <img src="https://raw.githubusercontent.com/Serverqp/EitaaAd/main/%DB%8C%D8%AE%DA%86%D8%A7%D9%84-%D9%81%D8%B1%DB%8C%D8%B2%D8%B1-%D8%A7%D9%85%D8%B1%D8%B3%D8%A7%D9%86-%D9%85%D8%AF%D9%84-TF16T329CLA.jpg" alt="کالا 4">
+    <h3>یخچال امرسان قرمز</h3>
+    <p>250,000 تومان</p>
+    <button class="add-to-cart" onclick="addToCart('یخچال امرسان قرمز', '250,000 تومان')">افزودن به سبد خرید</button>
+  </div>
+</div>
+
+<!-- سبد خرید -->
+<div id="cartModal">
+  <h2>سبد خرید</h2>
+  <div id="cartItems"></div>
+  <button onclick="toggleCart()">بستن</button>
+</div>
+
+<script>
+  let cart = [];
+
+  function addToCart(itemName, itemPrice) {
+    cart.push({ name: itemName, price: itemPrice });
+    alert(itemName + " به سبد خرید اضافه شد!");
+  }
+
+  function toggleCart() {
+    const cartModal = document.getElementById("cartModal");
+    const cartItems = document.getElementById("cartItems");
+    cartItems.innerHTML = "";
+
+    cart.forEach(item => {
+      const div = document.createElement("div");
+      div.className = "cart-item";
+      div.textContent = `${item.name} - ${item.price}`;
+      cartItems.appendChild(div);
+    });
+
+    cartModal.style.display = cartModal.style.display === "none" ? "block" : "none";
+  }
+</script>
+
 </body>
 </html>
