@@ -54,6 +54,7 @@
     .products {
       display: flex;
       justify-content: space-around;
+      flex-wrap: wrap; /* ریسپانسیو کردن محصولات */
       margin-top: 20px;
     }
     .product {
@@ -64,6 +65,7 @@
       width: 220px;
       background-color: rgba(255, 255, 255, 0.9);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 10px; /* فاصله بین محصولات */
     }
     .product img {
       width: 100%;
@@ -100,6 +102,17 @@
     .cart-item {
       margin-bottom: 10px;
     }
+
+    /* استایل برای صفحات کوچک‌تر */
+    @media (max-width: 768px) {
+      .products {
+        flex-direction: column; /* نمایش ستونی محصولات */
+        align-items: center;
+      }
+      .product {
+        width: 90%; /* پهنای کامل محصول در صفحات کوچک */
+      }
+    }
   </style>
 </head>
 <body>
@@ -113,29 +126,29 @@
   <div class="product">
     <img src="https://raw.githubusercontent.com/Serverqp/EitaaAd/main/df.jpg" alt="کالا 1">
     <h3>ماشین لباسشویی</h3>
-    <p>100,000 تومان</p>
+    <p>17,100,000 تومان</p>
     <button class="add-to-cart" onclick="addToCart('کالا 1', '100,000 تومان')">افزودن به سبد خرید</button>
   </div>
   <!-- محصول 2 -->
   <div class="product">
     <img src="https://raw.githubusercontent.com/Serverqp/EitaaAd/main/N60201-2.jpg" alt="کالا 2">
     <h3>یخچال کلور استیل</h3>
-    <p>200,000 تومان</p>
+    <p>19,200,000 تومان</p>
     <button class="add-to-cart" onclick="addToCart('کالا 2', '200,000 تومان')">افزودن به سبد خرید</button>
   </div>
   <!-- محصول 3 -->
   <div class="product">
     <img src="https://raw.githubusercontent.com/Serverqp/EitaaAd/main/refrigerator-freezer-lg-gr-x33ffqrl-essence-white.jpg" alt="کالا 3">
     <h3>یخچال دوقلو</h3>
-    <p>150,000 تومان</p>
-    <button class="add-to-cart" onclick="addToCart('یخچال دوقلو', '150,000 تومان')">افزودن به سبد خرید</button>
+    <p>17,150,000 تومان</p>
+    <button class="add-to-cart" onclick="addToCart('کالا 3', '150,000 تومان')">افزودن به سبد خرید</button>
   </div>
   <!-- محصول 4 -->
   <div class="product">
     <img src="https://raw.githubusercontent.com/Serverqp/EitaaAd/main/%DB%8C%D8%AE%DA%86%D8%A7%D9%84-%D9%81%D8%B1%DB%8C%D8%B2%D8%B1-%D8%A7%D9%85%D8%B1%D8%B3%D8%A7%D9%86-%D9%85%D8%AF%D9%84-TF16T329CLA.jpg" alt="کالا 4">
     <h3>یخچال امرسان قرمز</h3>
-    <p>250,000 تومان</p>
-    <button class="add-to-cart" onclick="addToCart('یخچال امرسان قرمز', '250,000 تومان')">افزودن به سبد خرید</button>
+    <p>12,250,000 تومان</p>
+    <button class="add-to-cart" onclick="addToCart('کالا 4', '250,000 تومان')">افزودن به سبد خرید</button>
   </div>
 </div>
 
