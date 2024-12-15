@@ -1,774 +1,176 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>قالب بوت استرپ آویلون</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+<title>محمدجواد جاودانفرد</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords" content="زندگینامه محمدجواد جاودانفرد, زندگی نامه محمدجواد جاودانفرد, محمدجواد جاودانفرد, محمدجواد جاودان فرد,">
+<style>
+* {
+box-sizing: border-box;
+}
+body {
+font-family: Arial, Helvetica, sans-serif;
+margin: 0;
+}
+.header {
+padding: 80px;
+text-align: center;
+background: linear-gradient(100deg, #b81802, rgb(6, 63, 220), #c5cc00);
+background-size: 100% 100%;
+            animation: gradientAnimation 50s ease infinite;
+color: white;
+}
+.header h1 {
+font-size: 40px;
+}
+.navbar {
+overflow: hidden;
+background: linear-gradient(100deg, #0b0b0b, rgb(172, 169, 169), #000000);
+position: sticky;
+position: -webkit-sticky;
+top: 0;
+}
+.navbar a {
+float: left;
+display: block;
+color: white;
+text-align: center;
+padding: 14px 20px;
+text-decoration: none;
+}
+.navbar a.right {
+float: right;
+}
+.navbar a:hover {
+background-color: #ddd;
+color: black;
+}
+.navbar a.active {
+background-color: #830707;
+color: white;
+}
+.row {
+display: -ms-flexbox; /* IE10 */
+display: flex;
+-ms-flex-wrap: wrap; /* IE10 */
+flex-wrap: wrap;
+}
+.side {
+-ms-flex: 30%; /* IE10 */
+flex: 30%;
+background-color: #f1f1f1;
+padding: 20px;
+}
+.main {
+-ms-flex: 70%; /* IE10 */
+flex: 70%;
+background-color: white;
+padding: 20px;
+}
+.fakeimg {
+background-color: #ac9e9e;
+width: 100%;
+padding: 20px;
+}
+.footer {
+padding: 20px;
+text-align: center;
+background: #ddd;
+}
+@media screen and (max-width: 700px) {
+.row {
+flex-direction: column;
+}
+}
+@media screen and (max-width: 400px) {
+.navbar a {
+float: none;
+width: 100%;
+}
+}
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+.myket-btn {
+            position: fixed;
+            top: 10px; /* فاصله از بالای صفحه */
+            left: 120px; /* فاصله از سمت چپ صفحه */
+            z-index: 1000; /* اولویت نمایش بالاتر از سایر محتوا */
+        }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700|Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet">
+        .myket-btn a img {
+            width: 100px; /* اندازه تصویر */
+            height: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px; /* گوشه‌های دکمه گرد شود */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* سایه برای دکمه */
+        }
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        .myket-btn a img:hover {
+            transform: scale(1.1); /* بزرگ شدن هنگام هاور */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* سایه قوی‌تر هنگام هاور */
+        }
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
-
-
+</style>
 </head>
-
 <body>
-
-  <!--==========================
-    Header
-  ============================-->
-  <header id="header">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <h1><a href="#intro" class="scrollto">آویلون</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="#intro"><img src="img/logo.png" alt="" title=""></a> -->
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class="menu-active"><a href="#intro">صفحه اصلی</a></li>
-          <li><a href="#about">درباره ما</a></li>
-          <li><a href="#features">امکانات</a></li>
-          <li><a href="#pricing">قیمت ها</a></li>
-          <li><a href="#team">تیم ما</a></li>
-          <li><a href="#gallery">گالری تصاویر</a></li>
-          <li class="menu-has-children"><a href="">لیست باز شونده</a>
-            <ul>
-              <li><a href="#">گزینه اول</a></li>
-              <li class="menu-has-children"><a href="#">گزینه دوم</a>
-                <ul>
-                  <li><a href="#">زیر گزینه اول</a></li>
-                  <li><a href="#">زیر گزینه دوم</a></li>
-                  <li><a href="#">زیر گزینه سوم</a></li>
-                  <li><a href="#">زیر گزینه چهارم</a></li>
-                  <li><a href="#">زیر گزینه پنجم</a></li>
-                </ul>
-              </li>
-              <li><a href="#">گزینه سوم</a></li>
-              <li><a href="#">گزینه چهارم</a></li>
-              <li><a href="#">گزینه پنجم</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">تماس با ما</a></li>
-        </ul>
-      </nav><!-- #nav-menu-container -->
-    </div>
-  </header><!-- #header -->
-
-  <!--==========================
-    Intro Section
-  ============================-->
-  <section id="intro">
-
-    <div class="intro-text">
-      <h2>به آویلون خوش آمدید</h2>
-      <p>ما تیمی از طراحان با استعداد هستیم که با Bootstrap وب سایت می سازیم</p>
-      <a href="#about" class="btn-get-started scrollto">بریم برای شروع</a>
-    </div>
-
-    <div class="product-screens">
-
-      <div class="product-screen-1 wow fadeInUp" data-wow-delay="0.4s" data-wow-duration="0.6s">
-        <img src="img/product-screen-1.png" alt="">
-      </div>
-
-      <div class="product-screen-2 wow fadeInUp" data-wow-delay="0.2s" data-wow-duration="0.6s">
-        <img src="img/product-screen-2.png" alt="">
-      </div>
-
-      <div class="product-screen-3 wow fadeInUp" data-wow-duration="0.6s">
-        <img src="img/product-screen-3.png" alt="">
-      </div>
-
-    </div>
-
-  </section><!-- #intro -->
-
-  <main id="main">
-
-    <!--==========================
-      About Us Section
-    ============================-->
-    <section id="about" class="section-bg">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h3 class="section-title">درباره ما</h3>
-          <span class="section-divider"></span>
-          <p class="section-description">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است <br>
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
-          </p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6 about-img wow fadeInLeft">
-            <img src="img/about-img.jpg" alt="">
-          </div>
-
-          <div class="col-lg-6 content wow fadeInRight tar">
-            <h2>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </h2>
-            <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </h3>
-            <p>
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
-            </p>
-
-            <ul>
-              <li>  <i class="ion-android-checkmark-circle"></i>&nbsp; لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-              <li>  <i class="ion-android-checkmark-circle"></i>&nbsp; لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-              <li>  <i class="ion-android-checkmark-circle"></i>&nbsp; لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </li>
-            </ul>
-
-            <p>
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- #about -->
-
-    <!--==========================
-      Product Featuress Section
-    ============================-->
-    <section id="features">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-8 offset-lg-4">
-            <div class="section-header wow fadeIn" data-wow-duration="1s">
-              <h3 class="section-title">امکانات محصول</h3>
-              <span class="section-divider"></span>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-5 features-img">
-            <img src="img/product-features.png" alt="" class="wow fadeInLeft">
-          </div>
-
-          <div class="col-lg-8 col-md-7 ">
-
-            <div class="row">
-
-              <div class="col-lg-6 col-md-6 box wow fadeInRight">
-                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-                <h4 class="title"><a href="">سرعت اجرای بالا</a></h4>
-                <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-              </div>
-              <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.1s">
-                <div class="icon"><i class="ion-ios-flask-outline"></i></div>
-                <h4 class="title"><a href="">کیفیت بالا</a></h4>
-                <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-              </div>
-              <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.2s">
-                <div class="icon"><i class="ion-social-buffer-outline"></i></div>
-                <h4 class="title"><a href="">چند لایه بودن</a></h4>
-                <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-              </div>
-              <div class="col-lg-6 col-md-6 box wow fadeInRight" data-wow-delay="0.3s">
-                <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-                <h4 class="title"><a href="">بهیته بودن</a></h4>
-                <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- #features -->
-
-    <!--==========================
-      Product Advanced Featuress Section
-    ============================-->
-    <section id="advanced-features">
-
-      <div class="features-row section-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img class="advanced-feature-img-right wow fadeInRight" src="img/advanced-feature-1.jpg" alt="">
-              <div class="wow fadeInLeft">
-                <h2>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  </h2>
-                <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است  </h3>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="features-row">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img class="advanced-feature-img-left" src="img/advanced-feature-2.jpg" alt="">
-              <div class="wow fadeInRight">
-                <h2>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </h2>
-                <i class="ion-ios-paper-outline" class="wow fadeInRight" data-wow-duration="0.5s"></i>
-                <p class="wow fadeInRight" data-wow-duration="0.5s">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                <i class="ion-ios-color-filter-outline wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s"></i>
-                <p class="wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                <i class="ion-ios-barcode-outline wow fadeInRight" data-wow-delay="0.4" data-wow-duration="0.5s"></i>
-                <p class="wow fadeInRight" data-wow-delay="0.4s" data-wow-duration="0.5s">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="features-row section-bg">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <img class="advanced-feature-img-right wow fadeInRight" src="img/advanced-feature-3.jpg" alt="">
-              <div class="wow fadeInLeft">
-                <h2>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </h2>
-                <h3>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </h3>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-                <i class="ion-ios-albums-outline"></i>
-                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- #advanced-features -->
-
-    <!--==========================
-      Call To Action Section
-    ============================-->
-    <section id="call-to-action">
-      <div class="container">
-        <div class="row tar">
-          <div class="col-lg-9 text-center text-lg-left">
-            <h3 class="cta-title">فراخوانی برای اقدام</h3>
-            <p class="cta-text"> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز </p>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#">فراخوانی برای اقدام</a>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- #call-to-action -->
-
-    <!--==========================
-      More Features Section
-    ============================-->
-    <section id="more-features" class="section-bg">
-      <div class="container">
-
-        <div class="section-header">
-          <h3 class="section-title">امکانات بیشتر</h3>
-          <span class="section-divider"></span>
-          <p class="section-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="box wow fadeInLeft">
-              <div class="icon"><i class="ion-ios-stopwatch-outline"></i></div>
-              <h4 class="title"><a href="">لورم ایپسوم متن</a></h4>
-              <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="box wow fadeInRight">
-              <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
-              <h4 class="title"><a href="">لورم ایپسوم</a></h4>
-              <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="box wow fadeInLeft">
-              <div class="icon"><i class="ion-ios-heart-outline"></i></div>
-              <h4 class="title"><a href="">اما همانطور که مشاهده می کنید</a></h4>
-              <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="box wow fadeInRight">
-              <div class="icon"><i class="ion-ios-analytics-outline"></i></div>
-              <h4 class="title"><a href="">مشکلات</a></h4>
-              <p class="description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- #more-features -->
-
-    <!--==========================
-      Clients
-    ============================-->
-    <section id="clients">
-      <div class="container">
-
-        <div class="row wow fadeInUp">
-
-          <div class="col-md-2">
-            <img src="img/clients/client-1.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-2.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-3.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-4.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-5.png" alt="">
-          </div>
-
-          <div class="col-md-2">
-            <img src="img/clients/client-6.png" alt="">
-          </div>
-
-        </div>
-      </div>
-    </section><!-- #more-features -->
-
-    <!--==========================
-      Pricing Section
-    ============================-->
-    <section id="pricing" class="section-bg">
-      <div class="container">
-
-        <div class="section-header">
-          <h3 class="section-title">تعرفه ها</h3>
-          <span class="section-divider"></span>
-          <p class="section-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="box wow fadeInLeft">
-              <h3>رایگان</h3>
-              <h4>0<sup>تومان</sup><span> ماهیانه</span></h4>
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i> لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-              </ul>
-              <a href="#" class="get-started-btn">فعال سازی</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="box featured wow fadeInUp">
-              <h3>تجاری</h3>
-              <h4>638,000<sup>تومن</sup><span> ماهیانه</span></h4>
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i>  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-              </ul>
-              <a href="#" class="get-started-btn">فعال سازی</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="box wow fadeInRight">
-              <h3>حرفه ای</h3>
-              <h4><sup>تومان</sup>1,078,000<span> ماهیانه</span></h4>
-              <ul>
-                <li><i class="ion-android-checkmark-circle"></i>   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i>   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i>   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i>   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-                <li><i class="ion-android-checkmark-circle"></i>   لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ </li>
-              </ul>
-              <a href="#" class="get-started-btn">فعال سازی</a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- #pricing -->
-
-
-    <!--==========================
-      Frequently Asked Questions Section
-    ============================-->
-    <section id="faq">
-      <div class="container">
-
-        <div class="section-header">
-          <h3 class="section-title">سوالات متداول</h3>
-          <span class="section-divider"></span>
-          <p class="section-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
-
-        <ul id="faq-list" class="wow fadeInUp">
-          <li>
-            <a data-toggle="collapse" class="collapsed" href="#faq1">برای ثبت نام در سایت چه کاری باید انجام داد ؟ <i class="ion-android-remove"></i></a>
-            <div id="faq1" class="collapse" data-parent="#faq-list">
-              <p>
-                در قسمت ثبت نام اولیه پس از ورود شماره موبایل و ایمیل و کد امنیتی با فشردن دکمه فعالسازی منتظر دریافت کد تایید بر روی تلفن همراه خود بوده و با دریافت کد در مرحله ورود کد تایید به مراحل ثبت نام ورود می کنید .
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <a data-toggle="collapse" href="#faq2" class="collapsed">در صورت دریافت نکردن کد تایید چه باید کرد ؟  <i class="ion-android-remove"></i></a>
-            <div id="faq2" class="collapse" data-parent="#faq-list">
-              <p>
-                در مرحله ورود کد تایید پس از ورود کد امنیتی دکمه ارسال مجدد را فشرده و منتظر دریافت کد بر روی تلفن همراه خود بمانید .
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <a data-toggle="collapse" href="#faq3" class="collapsed">در صورت عدم دریافت کد تایید حتی پس از درخواست ارسال مجدد کد چه باید کرد ؟  <i class="ion-android-remove"></i></a>
-            <div id="faq3" class="collapse" data-parent="#faq-list">
-              <p>
-                با بازگشت به مرحله ثبت نام اولیه در صفحه ثبت نام در ورود شماره تماس خود دقت بیشتری بفرمایید .
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <a data-toggle="collapse" href="#faq4" class="collapsed">در صورت نیاز به ویرایش اطلاعات خود باید چه کنیم؟ <i class="ion-android-remove"></i></a>
-            <div id="faq4" class="collapse" data-parent="#faq-list">
-              <p>
-                شما می توانید بعد از ورود به سایت به ویرایش اطلاعات خود اقدام نمایید.
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <a data-toggle="collapse" href="#faq5" class="collapsed">مراحل راه اندازی وب سایت چیست؟ <i class="ion-android-remove"></i></a>
-            <div id="faq5" class="collapse" data-parent="#faq-list">
-              <p>
-                تحلیل و مشاوره در خصوص انتخاب امکانات مورد نیاز برای وب سایت
-                انتخاب نام مناسب برای سایت
-                عقد قرار داد و دریافت پیش پرداخت
-                ثبت دامنه (نام سایت) Domain Registration
-                دریافت اطلاعات اولیه و نظرات شما در خصوص نوع طراحی
-                انجام مراحل طراحی گرافیکی قالب و ظاهر سایت
-                تائید طرح توسط شما
-                ایجاد استراتژی از عملکرد سایت
-                ورود اطلاعات اولیه وب سایت(اطلاعات نمونه)
-                طراحی صفحات بر اساس آخرین استانداردها
-                اختصاص فضای اینترنتی (هاستینگ) Hosting
-                بارگذاری سایت طراحی شده بر روی فضای اینترنت
-                تحویل و آموزش وب سایت در محل شرکت
-                دریافت با ماباقی مبلغ قرارداد
-                شروع پشتیبانی یکساله وب سایت ( شامل آپدیت های نرم افزاری - برطرف کردن اشکالات احتمالی و فنی وب سایت )
-              </p>
-            </div>
-          </li>
-
-          <li>
-            <a data-toggle="collapse" href="#faq6" class="collapsed">منظور از پهنای باند چیست؟ <i class="ion-android-remove"></i></a>
-            <div id="faq6" class="collapse" data-parent="#faq-list">
-              <p>
-                پهنای باند در واقع میزان اطلاعاتی است که در طول ماه توسط سایت شما می تواند رد وبدل شود مثلا فرض کنید شما یک فایل ۱ مگابایتی رار روی سایت خود قرار دهبد و پهنای باند ماهیانه ی سایت شما ۲۰ گیگا بایت می باشد . در این صورت این فایل ۱ مگابایتی در طول ماه ۲۰۰۰۰ بار می تواند توسط افراد در اینترنت دانلود شود.
-              </p>
-            </div>
-          </li>
-
-        </ul>
-
-      </div>
-    </section><!-- #faq -->
-
-    <!--==========================
-      Our Team Section
-    ============================-->
-    <section id="team" class="section-bg">
-      <div class="container">
-        <div class="section-header">
-          <h3 class="section-title">تیم ما</h3>
-          <span class="section-divider"></span>
-          <p class="section-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
-        <div class="row wow fadeInUp">
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team/team-1.jpg" alt=""></div>
-              <h4>متین روحانی</h4>
-              <span>مدیر اجرایی</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team/team-2.jpg" alt=""></div>
-              <h4>یسنا جنتی</h4>
-              <span>مدیر تولید</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team/team-3.jpg" alt=""></div>
-              <h4>ابوالفضل جهانبخش</h4>
-              <span>مدیر ارشد فناوری</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="img/team/team-4.jpg" alt=""></div>
-              <h4>اسرا جهان‌بخش</h4>
-              <span>حسابدار</span>
-              <div class="social">
-                <a href=""><i class="fa fa-twitter"></i></a>
-                <a href=""><i class="fa fa-facebook"></i></a>
-                <a href=""><i class="fa fa-google-plus"></i></a>
-                <a href=""><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- #team -->
-
-    <!--==========================
-      Gallery Section
-    ============================-->
-    <section id="gallery">
-      <div class="container-fluid">
-        <div class="section-header">
-          <h3 class="section-title">گالری تصاویر</h3>
-          <span class="section-divider"></span>
-          <p class="section-description">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است </p>
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-1.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-1.jpg" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-2.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-2.jpg" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-3.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-3.jpg" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-4.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-4.jpg" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-5.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-5.jpg" alt="">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="gallery-item wow fadeInUp">
-              <a href="img/gallery/gallery-6.jpg" class="gallery-popup">
-                <img src="img/gallery/gallery-6.jpg" alt="">
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- #gallery -->
-
-    <!--==========================
-      Contact Section
-    ============================-->
-    <section id="contact">
-      <div class="container">
-        <div class="row wow fadeInUp">
-
-          <div class="col-lg-4 col-md-4">
-            <div class="contact-about">
-              <h3>آویلون</h3>
-              <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است </p>
-              <div class="social-links">
-                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
-                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="info">
-              <div>
-                <i class="ion-ios-location-outline"></i>
-                <p>فارس - جهرم<br>خیابان ____ پلاک ___ </p>
-              </div>
-
-              <div>
-                <i class="ion-ios-email-outline"></i>
-                <p>info@example.com</p>
-              </div>
-
-              <div>
-                <i class="ion-ios-telephone-outline"></i>
-                <p>+989123456789</p>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-lg-5 col-md-8">
-            <div class="form">
-              <div id="sendmessage">پیام شما ارسال شد، متشکرم!</div>
-              <div id="errormessage"></div>
-              <form action="" method="post" role="form" class="contactForm">
-                <div class="form-row">
-                  <div class="form-group col-lg-6">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="نام و نام خانوادگی" data-rule="minlen:4" data-msg="باید حداقل از 4 کاراکتر تشکیل شده باشد" />
-                    <div class="validation"></div>
-                  </div>
-                  <div class="form-group col-lg-6">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="آدرس ایمیل" data-rule="email" data-msg="لطفا آدرس ایمیل خود را وارد کنید" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" name="subject" id="subject" placeholder="موضوع" data-rule="minlen:4" data-msg="لطفا یک موضوع حداقل 8 کاراکتری وارد کنید" />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="لطفا ابتدا پیامی که میخواهید برای ما ارسال شود را بنویسید" placeholder="متن پیام"></textarea>
-                  <div class="validation"></div>
-                </div>
-                <div class="text-center"><button type="submit" title="ارسال پیام">ارسال پیام</button></div>
-              </form>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- #contact -->
-
-  </main>
-
-  <!--==========================
-    Footer
-  ============================-->
-  <footer id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 text-lg-left text-center">
-          <div class="copyright">
-            &copy; Copyright <strong>Avilon</strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            Designed by <a href="https://iran-layer.com/">Iran Layer</a>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
-            <a href="#intro" class="scrollto">خانه</a>
-            <a href="#about" class="scrollto">درباره ما</a>
-            <a href="#">سیاست حفظ حریم خصوصی</a>
-            <a href="#">تیم ما</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </footer><!-- #footer -->
-
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-  <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/jquery/jquery-migrate.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/wow/wow.min.js"></script>
-  <script src="lib/superfish/hoverIntent.js"></script>
-  <script src="lib/superfish/superfish.min.js"></script>
-  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
-
-  <!-- Contact Form JavaScript File -->
-  <script src="contactform/contactform.js"></script>
-
-  <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+  <div class="myket-btn">
+    <a href="https://myket.ir/app/com.app.myapp.tNZCgatXex?utm_source=search-ads-gift&utm_medium=cpc" target="_blank">
+        <img src="https://myket.ir/core/images/logo/get1-fa.png" alt="دریافت از مایکت">
+    </a>
+</div>
+<div class="header">
+<h1>✨محمدجواد جاودانفرد✨
+</h1>
+<p style="font-weight: bold">!سایت شخصی محمدجواد جاودانفرد اینجاست</p>
+</div>
+
+<div class="navbar">
+<a href="#" class="active">صفحه اصلی</a>
+<a href="https://serverqp.github.io/Mj/">💥زندگی نامه من💥</a>
+<a href="https://serverqp.github.io/DarAmad/">📃مقالات شخصی من📃</a>
+<a href="https://myket.ir/app/com.app.myapp.tNZCgatXex?utm_source=search-ads-gift&utm_medium=cpc">🎮دانلود بازی من🎮</a>
+</div>
+
+<div class="row">
+<div class="side">
+<h2>:موقعیت مکانی من</h2>
+<h5>من در شهر مشهد خیابان توحید توحید 19 پلاک 12 زندگی میکنم</h5>
+<img src="https://raw.githubusercontent.com/Serverqp/EnterAi/main/MGH_3613-1080X720_edit_8695612847109.jpeg" alt="موقعیت مکانی" style="width:100%; height:500px;">
+<p>✌این یک تصویر قدیمی در تیر ماه سال 1401 از من است✌</p>
+<h3>علایق من</h3>
+<p>من به بازی های کامپیوتری علاقه زیادی دارم و تا الان 2 تا بازی داستانی رو تموم کردم که تصاویرش این زیر هست</p>
+<img src="https://upload.wikimedia.org/wikipedia/en/4/44/Red_Dead_Redemption_II.jpg" alt="تصویر" style="width:25%; height:75px;">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAMg41SrNpRVNg29DIa65Dr0liAZ2v73gDgA&s" alt="تصویر" style="width:25%; height:75px;">
+</div>
+<div class="main">
+<h2>درباره من</h2>
+<h5>👇این زیر یکم بیشتر درباره خودم بهتون گفتم</h5>
+<div> 
+  <div style="margin-left: -20px;">
+  <video width="105%" height="200px" autoplay loop muted playsinline>
+    <source src="https://raw.githubusercontent.com/Serverqp/DarAmad/main/mylivewallpapers.com-Eyeball.mp4" type="video/mp4">
+    مرورگر شما از ویدیو پشتیبانی نمی‌کند.
+  </video>
+</div>
+<p>🎃</p>
+<p>من محمدجواد جاودانفرد هستم 15 ساله متولد 5 آذر 1388. من تقریبا سعی کردم تو همه رشته های تکنولوژی  درحد یک فعالیت کوچیک هم داشته باشم و به همین خاطر گفتم بیام یک سایت بنویسم که نتیجش شد این. شما اطلاعات بیشتر رو میتونین از تو سایت زندگی نامه بخونید و لطفا بازی من رو از طریق دکمه بالا دانلود کنید</p>
+<br>
+<h2>سخن پایانی</h2>
+<h5>💚قبل از حرفم 2 تا صلوات بفرست💚</h5>
+<div> <div style="margin-left: -20px;"></div>
+<img
+ src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpZHm7pX1p4RRGTXdSgNo-jnHdLz0yXF0Maw&s" alt="تصویر" style="width: 100%; height: 500;">
+<div>
+ <p>📛تقاضا میشود📛</p>
+<p>از شما تقاضا میکنم که حتما از سایت زندگی نامه من بازدید کنید و بازی من رو از مایکت دانلود کنید که خیلی سرگرم کننده است. ممنون از شما که تا اینجا همراه من بودید </p>
+</div>
+</div>
+
+<div class="footer">
+<h2>تمامی حقوق این سایت محفوظ است</h2>
+<h4>(ساخته شده با 🧡 توسط محمدجواد جاودانفرد)</h4>
+<h5>1403/9/25</h5>
+</div>
 
 </body>
-</html>
+</html> 
